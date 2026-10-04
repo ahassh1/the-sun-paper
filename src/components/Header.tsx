@@ -1,10 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import BanglaDate from "./BanglaDate";
 
 const Header = () => {
-  const date = new Date().toLocaleDateString("bn-BD", {
-    dateStyle: "full",
-  });
 
   return (
     <header className="bg-sky-50">
@@ -29,9 +27,7 @@ const Header = () => {
               The Sun Paper
             </h1>
 
-            <p className="text-xs text-gray-500">
-              {date}
-            </p>
+            <BanglaDate/>
           </div>
         </div>
       </Link>

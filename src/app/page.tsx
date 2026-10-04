@@ -1,12 +1,16 @@
 import Marquee from '@/components/Marquee';
 import NavLinks from '@/components/NavLinks';
-const HomePage = () => {
+import HomePage from './homepage/page';
+const Home = () => {
   return (
     <div>
       <NavLinks/>
       <Marquee/>
+      <div className='mx-auto container'>
+        <HomePage/>
+      </div>
     </div>
   );
 };
 
-export default HomePage;
+export default Home;
