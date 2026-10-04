@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
@@ -13,7 +14,8 @@ const Header = () => {
         <div className="hidden w-40 lg:block" />
 
       
-        <div className="flex items-center gap-2 text-center">
+      <Link href={"/"}>
+       <div className="flex items-center gap-2 text-center">
           <Image
             src="/logo.webp"
             alt="The Sun Paper Logo"
@@ -32,6 +34,7 @@ const Header = () => {
             </p>
           </div>
         </div>
+      </Link>
 
 
         <div className="flex items-center gap-2">
@@ -45,6 +48,7 @@ const Header = () => {
         </div>
 
       </div>
+    
     </header>
   );
 };

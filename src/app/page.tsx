@@ -1,7 +1,10 @@
-export default function Home() {
+import NavLinks from '@/components/NavLinks';
+const HomePage = () => {
   return (
-  <div >
-  <h1 className="h-screen flex items-center justify-center text-5xl">children</h1>
-</div>
+    <div>
+      <NavLinks/>
+    </div>
   );
-}
+};
+
+export default HomePage;
