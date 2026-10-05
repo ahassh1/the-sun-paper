@@ -1,34 +1,21 @@
-import React from 'react';
 import MainNews from "@/components/MainNews"
+import OtherSections from '@/components/OtherSections';
 
 const HomePage = async() => {
     const res = await fetch("https://news-api-v2.vercel.app/api/news/sections")
     const data = await res.json()
     const sections = data.data
     const mainNews= sections[0].articles
-    console.log(mainNews);
-    
-    // const mainNews = sections.articles.slice(0,1)
-    const otherSections = sections.slice(1,5)
-
-    
-    console.log(sections)
+    const otherSections = sections[0].articles.slice(1,5)
 
     return (
         <div>
-             <div className='grid grid-cols-3'>
+             <div className='grid grid-cols-3 mt-4'>
                 {/* first part */}
-                <div className='col-span-2 bg-blue-400 flex gap-2'> 
+                <div className='col-span-2 flex gap-2'> 
                <MainNews news={mainNews}/>
                 <div>
-                     {
-            otherSections.map((other, i) => 
-                <div key={i}>
-                    <p className='text-red-500'>প্রধান খবর</p>
-                   <h3 className='font-bold'> {other.title}</h3>
-                </div>
-            )
-        }
+                    <OtherSections otherNews= {otherSections}/>
                 </div>
                 </div>
                 {/* second section  */}
