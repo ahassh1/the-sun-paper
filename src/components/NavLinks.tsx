@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import Link from "next/link";
+
 interface INav{
      slug: string,
       title: string,
@@ -15,9 +16,9 @@ const NavLinks = async() => {
     const filterNavs = navs.filter((nav:INav) => nav.scrapable)
     return (
         <div className='flex justify-center gap-2 mt-3'>
-            <Link href={"/"}>হোম</Link>
+            <Link  className="hover:text-red-500 hover:underline" href={"/"}>হোম</Link>
             {
-                filterNavs.map((nav: INav, i: number)=> <Link key={i} href={`/category/${nav.slug}`}> 
+                filterNavs.map((nav: INav, i: number)=> <Link className="hover:text-red-500 space-x-2 hover:underline" key={i} href={`/category/${nav.slug}`}> 
                 {  nav.title}
                 </Link>)
             }

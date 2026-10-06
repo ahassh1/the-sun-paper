@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import BanglaDate from './BanglaDate';
-export type Inews ={
+ type Inews ={
     imageUrl: string,
     imageAlt: string,
     title: string,
