@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const MostRead = async () => {
   const res = await fetch(
-    "https://news-api-v2.vercel.app/api/news/most-read"
+    `${process.env.NEXT_PUBLIC_API_URL}/api/news/most-read`
   );
 
   const data = await res.json();

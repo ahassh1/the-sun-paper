@@ -8,7 +8,7 @@ import HomePageOtherSection from "@/components/HomePageOtherSection";
 
 const HomePage = async() => {
 
-    const res = await fetch("https://news-api-v2.vercel.app/api/news/sections")
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news/sections`)
 
     const data = await res.json()
 

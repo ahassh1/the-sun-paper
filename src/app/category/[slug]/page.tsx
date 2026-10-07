@@ -27,7 +27,7 @@ const CategoryPage = async ({ params }: IProps) => {
     console.log(slug); // Check slug
 
     const res = await fetch(
-        `https://news-api-v2.vercel.app/api/category/${slug}`, // Fetch data
+        `${process.env.NEXT_PUBLIC_API_URL}/api/category/${slug}`, // Fetch data
     );
 
     const data: INews = await res.json(); // Get response

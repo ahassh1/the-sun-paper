@@ -10,7 +10,7 @@ import "react-marquee-text/dist/styles.css";
 
 const Marquee = async () => {
 
-    const res = await fetch("https://news-api-v2.vercel.app/api/news");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/news`);
 
     const data = await res.json();
 

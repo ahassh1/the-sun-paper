@@ -35,7 +35,7 @@ const NewsDetails = async ({ params }: IProps) => {
 
   // Fetch news data
   const res = await fetch(
-    `https://news-api-v2.vercel.app/api/article/${newsid}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/api/article/${newsid}`,
     {
       cache: "no-store",
     }
