@@ -17,8 +17,13 @@ const HomePage = async() => {
     const mainNews = sections[0].articles
 
     const otherSections = sections[0].articles.slice(1,5)
-
-    const homePageOSectoin = sections.slice(1)
+    
+    const homePageOSection = sections.slice(1).filter(
+    (section: { title: string }) =>
+      section.title !== "বিবিসি বাংলা এখন হোয়াটসঅ্যাপে!" &&
+      section.title !== "বিবিসি বাংলা এখন ইন্সটাগ্রামে!" &&
+      section.title !== "সামাজিক মাধ্যমে বিবিসি বাংলা"
+  );
 
     return (
 
@@ -42,7 +47,7 @@ const HomePage = async() => {
 
             <div className="mt-4 md:mt-5">
 
-              <HomePageOtherSection otherNews={homePageOSectoin}/>
+              <HomePageOtherSection otherNews={homePageOSection}/>
 
             </div>
 
