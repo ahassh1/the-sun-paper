@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const MostRead = async () => {
   const res = await fetch(
     "https://news-api-v2.vercel.app/api/news/most-read"
@@ -9,6 +11,7 @@ const MostRead = async () => {
 
   interface IMostReadSection {
     title: string;
+    id: string
   }
 
   return (
@@ -26,9 +29,11 @@ const MostRead = async () => {
                 {i + 1}
               </h1>
 
+             <Link href={`/news/${mostRead.id}`}>
               <h1 className="text-[15px] font-semibold leading-5 text-gray-800 transition-colors duration-200 hover:text-red-600">
                 {mostRead.title}
               </h1>
+             </Link>
             </div>
           )
         )}

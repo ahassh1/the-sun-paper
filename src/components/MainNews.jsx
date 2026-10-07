@@ -1,12 +1,13 @@
 import Image from "next/image";
 
 import BanglaDate from "./BanglaDate";
+import Link from "next/link";
 
 const MainNews = ({ news }) => {
   const firstNews = news[0];
 
   return (
-    <div className="card group w-96 cursor-pointer overflow-hidden bg-base-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <Link href={`/news/${firstNews.id}`} className="card group w-96 cursor-pointer overflow-hidden bg-base-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       <figure className="overflow-hidden">
         <Image
           src={firstNews.imageUrl}
@@ -28,7 +29,7 @@ const MainNews = ({ news }) => {
           <BanglaDate className="text-left" />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

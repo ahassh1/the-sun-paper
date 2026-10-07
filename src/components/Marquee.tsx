@@ -32,7 +32,7 @@ const Marquee = async () => {
                     {headlines.map((head:IHeadline) => (
                         <Link
                             key={head.id}
-                            href={`/current-news/${head.id}`}
+                            href={`/news/${head.id}`}
                             className="mx-2 inline-block hover:underline"
                         >
                             <span>{head.title}</span>

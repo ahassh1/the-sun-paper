@@ -1,6 +1,7 @@
 import NewsCard from "@/components/NewsCard";
 
 // Page props
+
 interface IProps {
     params: Promise<{
         slug: string;
@@ -8,18 +9,19 @@ interface IProps {
 }
 
 // News type
+
 interface INews {
     title: string;
-    articles: {
+    data: {
         imageUrl: string;
         imageAlt: string;
         title: string;
         description: string;
+        id: string
     }[];
 }
 
 const CategoryPage = async ({ params }: IProps) => {
-
     const { slug } = await params; // Get slug
 
     console.log(slug); // Check slug
@@ -30,7 +32,7 @@ const CategoryPage = async ({ params }: IProps) => {
 
     const data: INews = await res.json(); // Get response
 
-    const categoryNews = data.articles; // Get articles
+    const categoryNews = data.data; // Get articles
 
     return (
         <div>
@@ -39,14 +41,12 @@ const CategoryPage = async ({ params }: IProps) => {
             </h1>
 
             <div className="grid grid-cols-3 gap-4">
-                {
-                    categoryNews.map((news) => (
-                        <NewsCard
-                            key={news.title}
-                            news={news}
-                        />
-                    ))
-                }
+                {categoryNews.map((news) => (
+                    <NewsCard
+                        key={news.id}
+                        news={news}
+                    />
+                ))}
             </div>
         </div>
     );
